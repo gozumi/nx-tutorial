@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Todo } from '@myorg/data';
+import { Todos } from '@myorg/ui';
 
-interface Todo {
-  title: string;
-}
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -27,11 +26,7 @@ const App = () => {
   return (
     <>
       <h1>Todos</h1>
-      <ul>
-        {todos.map((t) => (
-          <li className={'todo'}>{t.title}</li>
-        ))}
-      </ul>
+      <Todos todos={todos} />
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo
       </button>

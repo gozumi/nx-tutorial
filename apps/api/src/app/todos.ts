@@ -1,8 +1,6 @@
 import { Express } from 'express';
+import { Todo } from '@myorg/data';
 
-interface Todo {
-  title: string;
-}
 
 const todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
 
