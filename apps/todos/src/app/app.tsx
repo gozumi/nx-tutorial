@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Todos</h1>
+      <h1>Welcome to todos!</h1>
       <Todos todos={todos} />
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo

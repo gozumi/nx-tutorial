@@ -1,9 +1,29 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 
 import App from './app';
 
 describe('App', () => {
+  beforeEach(() => {
+    global['fetch'] = jest.fn().mockResolvedValueOnce({
+      json() {
+        return [
+          {
+            "title": "Todo 1"
+          },
+          {
+            "title": "Todo 2"
+          }
+        ]
+      }
+    });
+    
+  });
+  afterEach(() => {
+    delete global['fetch'];
+    cleanup();
+  });
+
   it('should render successfully', () => {
     const { baseElement } = render(<App />);
 
